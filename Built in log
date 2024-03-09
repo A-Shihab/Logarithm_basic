@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+#define ll long long
+#define endl '\n'
+#define pb push_back
+#define for1(i, n) for (ll i = 0; i < n; i++)
+#define fast() ios::sync_with_stdio(false); cin.tie(0)
+
+double solve(ll n)
+{
+    //return log2(n);
+    //return log10(n);
+    //return log(2.71828);
+    
+    //return log10(n)/log10(3);// log3(n) //can find any base log with this method
+    
+    //return floor(log10(n))+1;// can find how many degit we have in b base
+    
+    /*ll fact=1;
+    
+    for(ll i=1; i<=n; i++) fact *= i;
+    
+    return log10(fact);*/ // but for bigger constraint it will overflow
+    
+    long double sum = 0;
+    
+    for(ll i=1; i<=n; i++)sum += log10(i);
+    
+    return floor(sum)+1;// now it will be ok for bgger constraint
+    
+}
+
+int main()
+{
+    fast();
+    
+    ll n;
+    cin>>n;
+    
+    cout<<solve(n)<<endl; 
+}
